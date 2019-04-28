@@ -91,6 +91,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/persist:/persist \
