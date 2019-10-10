@@ -46,6 +46,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     TrebuchetQuickStep
 
+# Component override
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
