@@ -133,6 +133,12 @@ PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0
