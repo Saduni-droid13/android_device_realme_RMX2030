@@ -36,4 +36,6 @@
     <string name="game_mode_summary">Boost Touch Sampling Rate</string>
     <string name="game_mode_title">Game mode</string>
     <string name="tile_game_mode">game mode</string>
+    <!-- FPS Counter -->
+    <string name="fps_info_title">FPS Counter</string>
 </resources>

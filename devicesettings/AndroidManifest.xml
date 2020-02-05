@@ -110,6 +110,16 @@
             </intent-filter>
         </service>
         <service
+            android:name="org.lineageos.settings.device.fpsinfo.FPSTileService"
+            android:icon="@drawable/ic_eye"
+            android:label="@string/fps_info_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <service
             android:name="org.lineageos.settings.device.fpsinfo.FPSInfoService"
             android:exported="false">
         </service>
