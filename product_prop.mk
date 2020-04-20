@@ -18,6 +18,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
    ro.config.vc_call_vol_steps=7 \
    ro.config.media_vol_steps=25
 
+# Charger
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.hw=1 \
