@@ -95,6 +95,10 @@ PRODUCT_PACKAGES += \
     init.safailnet.rc \
     hal3.rc
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl.r5x
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm
