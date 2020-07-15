@@ -1,3 +1,5 @@
+import /system/etc/init/init.devicesetting.rc
+
 on post-fs
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
@@ -48,19 +50,9 @@ on property:sys.boot_completed=1
     write /sys/block/dm-3/queue/read_ahead_kb 128
 
 on boot
-
-    # Disable edge limit control interface
-    write /proc/touchpanel/oppo_tp_limit_enable 0
-
-    # Enable oppo touchpanel direction
-    write /proc/touchpanel/oppo_tp_direction 1
-
     # Update touchscreen firmware
     chown system system /proc/touchpanel/tp_fw_update
     write /proc/touchpanel/tp_fw_update 1
-    
-    # OTG
-    write /sys/class/power_supply/usb/otg_switch 1
 
     # FP
 service oppo_fingerprints_sh /vendor/bin/sh /vendor/bin/init.oppo.fingerprints.sh
