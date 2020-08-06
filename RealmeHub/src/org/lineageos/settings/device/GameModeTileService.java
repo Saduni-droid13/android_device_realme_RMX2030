@@ -18,6 +18,8 @@
 package org.lineageos.settings.device;
 
 import android.annotation.TargetApi;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
@@ -30,6 +32,9 @@ import org.lineageos.settings.device.DeviceSettings;
 @TargetApi(24)
 public class GameModeTileService extends TileService {
     private boolean enabled = false;
+    public static boolean GameModeTile = false;
+    private Context mContext;
+    private NotificationManager mNotificationManager;
 
     @Override
     public void onDestroy() {
@@ -53,7 +58,6 @@ public class GameModeTileService extends TileService {
         enabled = GameModeSwitch.isCurrentlyEnabled(this);
         getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
         getQsTile().updateTile();
-
     }
 
     @Override
@@ -68,8 +72,23 @@ public class GameModeTileService extends TileService {
         enabled = GameModeSwitch.isCurrentlyEnabled(this);
         Utils.writeValue(GameModeSwitch.getFile(), enabled ? "0" : "1");
         SystemProperties.set("perf_profile", enabled ? "0" : "1" );
+        if (sharedPrefs.getBoolean("dnd", false)) GameModeTileDND();
         sharedPrefs.edit().putBoolean(DeviceSettings.KEY_GAME_SWITCH, enabled ? false : true).commit();
         getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
         getQsTile().updateTile();
+    }
+
+    private void GameModeTileDND() {
+        mNotificationManager = (NotificationManager)this.getSystemService(Context.NOTIFICATION_SERVICE);
+        switch ((GameModeSwitch.isCurrentlyEnabled(this)) ? 1 : 0) {
+        case 1:
+        mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY);
+        mNotificationManager.setNotificationPolicy(
+        new NotificationManager.Policy(NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA,0, 0));
+        break;
+        case 0:
+        mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL);
+        break;
+        }
     }
 }

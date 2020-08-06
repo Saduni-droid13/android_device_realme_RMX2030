@@ -18,19 +18,31 @@
 package org.lineageos.settings.device;
 
 import android.util.Log;
+import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemProperties;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
+import android.widget.Toast;
 
 import org.lineageos.settings.device.DeviceSettings;
 
 public class GameModeSwitch implements OnPreferenceChangeListener {
-
     private static final String FILE = "/proc/touchpanel/game_switch_enable";
     private static final String TAG = Utils.class.getSimpleName();
+
+    private static boolean GameMode = false;
+    private static Context mContext;
+    private static NotificationManager mNotificationManager;
+    private static int userSelectedDndMode;
+
+    public GameModeSwitch(Context context) {
+        mContext = context;
+	userSelectedDndMode = mContext.getSystemService(NotificationManager.class).getCurrentInterruptionFilter();
+    }
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
@@ -47,12 +59,39 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
         return Utils.getFileValueAsBoolean(getFile(), false);
     }
 
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
         SystemProperties.set("perf_profile", enabled ? "1" : "0" );
         Log.e(TAG, "game mode set to " + enabled);
+        GameMode = enabled;
+        GameModeDND();
         return true;
+    }
+
+    public static boolean checkNotificationPolicy(Context context){
+        mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        return mNotificationManager.isNotificationPolicyAccessGranted();
+    }
+
+    public static void GameModeDND() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
+
+        if (!checkNotificationPolicy(mContext)) {
+            //Launch Do Not Disturb Access settings
+            Intent DNDAccess = new Intent(android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+            mContext.startActivity(DNDAccess);
+        } else if (isCurrentlyEnabled(mContext)) {
+	    userSelectedDndMode = mContext.getSystemService(NotificationManager.class).getCurrentInterruptionFilter();
+            if (sharedPreferences.getBoolean("dnd", false)) activateDND();
+        } else if (!isCurrentlyEnabled(mContext)) {
+            if (sharedPreferences.getBoolean("dnd", false)) mNotificationManager.setInterruptionFilter(userSelectedDndMode);
+        }
+    }
+
+    public static void activateDND() {
+        mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY);
+        mNotificationManager.setNotificationPolicy(
+        new NotificationManager.Policy(NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA, 0, 0));
     }
 }

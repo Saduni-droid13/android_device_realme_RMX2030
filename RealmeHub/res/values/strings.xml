@@ -27,6 +27,10 @@
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
 
+    <!-- DND Switch -->
+    <string name="dnd_title">Do Not Disturb</string>
+    <string name="dnd_summary">DND will be activated if Game Mode is enabled</string>
+
     <!-- FPS Info -->
     <string name="fps_info_title">FPS Info Overlay</string>
     <string name="fps_info_summary">Show current frames per second by overlay</string>
