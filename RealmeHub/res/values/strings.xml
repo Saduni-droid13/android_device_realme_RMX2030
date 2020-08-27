@@ -13,7 +13,7 @@
 <resources>
     <string name="device_title">RealmeHub</string>
     <string name="device_summary">Realme specific device settings</string>
-    <string name="display_title">Display</string>
+    <string name="graphics_title">Gaming</string>
     <string name="misc_title">Misc settings</string>
     <string name="smart_charging_main_title">Battery</string>
 
@@ -23,7 +23,7 @@
     <string name="tile_otg_mode">Enable USB-OTG</string>
 
     <!-- Game Mode -->
-    <string name="game_mode_summary">Boost Touch Sampling Rate</string>
+    <string name="game_mode_summary">Boost Touch Sampling Rate and enables performance boosting.\nBattery life will be affected</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
 

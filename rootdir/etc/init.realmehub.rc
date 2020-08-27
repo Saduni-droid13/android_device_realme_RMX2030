@@ -1,5 +1,18 @@
 on boot
+  setprop perf_profile 0
 
 # FPS Info permissions
   chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
   chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
+# Game Mode perf profile
+on property:perf_profile=0
+  write /sys/module/cpu_boost/parameters/input_boost_duration 64
+  write /sys/module/cpu_boost/parameters/input_boost_freq_lp 0
+  write /sys/module/cpu_boost/parameters/input_boost_freq_hp 0
+
+on property:perf_profile=1
+  write /sys/module/cpu_boost/parameters/input_boost_duration 100 
+  write /sys/module/cpu_boost/parameters/input_boost_freq_lp 1305600
+  write /sys/module/cpu_boost/parameters/input_boost_freq_hp 1401600
+

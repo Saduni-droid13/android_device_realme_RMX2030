@@ -20,6 +20,7 @@ package org.lineageos.settings.device;
 import android.util.Log;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.SystemProperties;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceManager;
@@ -50,6 +51,7 @@ public class GameModeSwitch implements OnPreferenceChangeListener {
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Boolean enabled = (Boolean) newValue;
         Utils.writeValue(getFile(), enabled ? "1" : "0");
+        SystemProperties.set("perf_profile", enabled ? "1" : "0" );
         Log.e(TAG, "game mode set to " + enabled);
         return true;
     }
