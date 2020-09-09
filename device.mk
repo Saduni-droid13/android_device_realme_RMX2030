@@ -60,6 +60,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX2030
 
+# Fingerprit gesture
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/keylayout/uinput-egis.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-egis.kl \
+    $(LOCAL_PATH)/configs/idc/uinput-egis.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/uinput-egis.idc
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
