@@ -22,6 +22,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.util.Log;
 
@@ -37,11 +39,16 @@ public class TiltSensor implements SensorEventListener {
     private static final String TILT_SENSOR = "android.sensor.tilt_detector";
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
+    private PowerManager mPowerManager;
+    private WakeLock mWakeLock;
+
+    private boolean doneDelay;
 
     private long mEntryTimestamp;
 
@@ -50,6 +57,8 @@ public class TiltSensor implements SensorEventListener {
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = DozeUtils.getSensor(mSensorManager, TILT_SENSOR);
         mExecutorService = Executors.newSingleThreadExecutor();
+        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
     }
 
     private Future<?> submit(Runnable runnable) {
@@ -58,17 +67,49 @@ public class TiltSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        boolean isAOD = DozeUtils.isAlwaysOnEnabled(mContext);
+        boolean isPickUp = DozeUtils.isPickUpEnabled(mContext);
+        boolean isSmartWake = DozeUtils.isSmartWakeEnabled(mContext);
+
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
-            return;
-        }
 
-        mEntryTimestamp = SystemClock.elapsedRealtime();
-
-        if (event.values[0] == 0) {
-            DozeUtils.launchDozePulse(mContext);
+        if (isPickUp && isSmartWake && !isAOD) {
+            if (!doneDelay) {
+                if (delta < MIN_PULSE_INTERVAL_MS) {
+                    return;
+                }
+                mEntryTimestamp = SystemClock.elapsedRealtime();
+                doneDelay = true;
+            }
+            if (event.values[0] == 2) {
+                DozeUtils.launchDozePulse(mContext);
+            }
+            mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
+            if (event.values[0] == 0) {
+                mSensor = DozeUtils.getSensor(mSensorManager, "qti.sensor.amd");
+                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                        PowerManager.WAKE_REASON_GESTURE, TAG);
+            } else {
+                mSensorManager.registerListener(this, mSensor,
+                        SensorManager.SENSOR_DELAY_NORMAL);
+                mSensor = DozeUtils.getSensor(mSensorManager, "qti.sensor.amd");
+            }
+        } else {
+            if (delta < MIN_PULSE_INTERVAL_MS) {
+                return;
+            }
+            mEntryTimestamp = SystemClock.elapsedRealtime();
+            if (event.values[0] == 2) {
+                DozeUtils.launchDozePulse(mContext);
+                if (DEBUG) Log.d(TAG, "Motion detected");
+            }
+            else if (event.values[0] == 1)
+            {
+                if (DEBUG) Log.d(TAG, "Waiting for motion detection");
+            }
         }
     }
 
@@ -78,6 +119,7 @@ public class TiltSensor implements SensorEventListener {
     }
 
     protected void enable() {
+        doneDelay = false;
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
             mSensorManager.registerListener(this, mSensor,
