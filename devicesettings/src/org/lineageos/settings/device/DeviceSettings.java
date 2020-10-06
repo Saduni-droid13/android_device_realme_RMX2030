@@ -56,6 +56,9 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_CHARGING_SWITCH = "smart_charging";
     public static final String KEY_RESET_STATS = "reset_stats";
 
+    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
+    public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
+
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private static TwoStatePreference mOTGModeSwitch;
