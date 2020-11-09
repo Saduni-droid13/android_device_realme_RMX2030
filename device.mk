@@ -61,6 +61,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.realme_RMX1911
 
+# FU
+$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
