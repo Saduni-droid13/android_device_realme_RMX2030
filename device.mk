@@ -147,6 +147,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.realme_trinket
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 28
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
+
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/WCNSS_qcom_cfg.ini \
