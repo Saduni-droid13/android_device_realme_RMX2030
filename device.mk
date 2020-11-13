@@ -79,6 +79,7 @@ PRODUCT_BOOT_JARS += \
 # Init
 PRODUCT_PACKAGES += \
     init.devicesetting.rc \
+    init.oppo.fingerprints.rc \
     init.target.rc \
     init.safailnet.rc \
     hal3.rc

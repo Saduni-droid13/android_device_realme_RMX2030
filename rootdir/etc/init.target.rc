@@ -1,4 +1,5 @@
 import /system/etc/init/init.devicesetting.rc
+import /system/etc/init/init.oppo.fingerprints.rc
 
 on post-fs
     mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
@@ -53,12 +54,6 @@ on boot
     # Update touchscreen firmware
     chown system system /proc/touchpanel/tp_fw_update
     write /proc/touchpanel/tp_fw_update 1
-
-    # FP
-service oppo_fingerprints_sh /vendor/bin/sh /vendor/bin/init.oppo.fingerprints.sh
-    class main
-    user root
-    oneshot
 
 service fps_hal /vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprint@2.1-service
     class late_start
