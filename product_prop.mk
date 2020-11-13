@@ -45,7 +45,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
-    media.settings.xml=/system/etc/media_profiles_vendor.xml
+    media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
 
 # Netflix
 PRODUCT_PRODUCT_PROPERTIES += \
