@@ -77,10 +77,6 @@ PRODUCT_PACKAGES += \
     init.safailnet.rc \
     hal3.rc
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.realme_RMX1911
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm
