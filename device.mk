@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/oppo/RMX1801
+DEVICE_PATH := device/realme/RMX1911
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oppo/RMX1801/RMX1801-vendor.mk)
+$(call inherit-product, vendor/realme/RMX1911/RMX1911-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.oppo_RMX1801
+    android.hardware.biometrics.fingerprint@2.1-service.realme_RMX1911
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -79,7 +79,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.oppo_RMX1801
+    android.hardware.light@2.0-service.realme_RMX1911
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -123,7 +123,7 @@ PRODUCT_BOOT_JARS += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.oppo_RMX1801
+    android.hardware.usb@1.0-service.realme_RMX1911
 
 # WiFi
 PRODUCT_COPY_FILES += \

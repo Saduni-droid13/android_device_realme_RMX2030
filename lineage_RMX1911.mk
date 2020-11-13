@@ -21,34 +21,34 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common LOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from oppo RMX1801
-$(call inherit-product, device/oppo/RMX1801/device.mk)
+# Inherit from realme RMX1911
+$(call inherit-product, device/realme/RMX1911/device.mk)
 
 # Define first api level
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Bootanimation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1600
 
-PRODUCT_NAME := lineage_RMX1801
-PRODUCT_DEVICE := RMX1801
-PRODUCT_MANUFACTURER := OPPO
-PRODUCT_BRAND := oppo
-PRODUCT_MODEL := Realme 2 Pro
+PRODUCT_NAME := lineage_RMX1911
+PRODUCT_DEVICE := RMX1911
+PRODUCT_MANUFACTURER := Realme
+PRODUCT_BRAND := realme
+PRODUCT_MODEL := Realme 5
 
-PRODUCT_GMS_CLIENTID_BASE := android-oppo
+PRODUCT_GMS_CLIENTID_BASE := android-realme
 
-TARGET_VENDOR_PRODUCT_NAME := RMX1801
-TARGET_VENDOR_DEVICE_NAME := RMX1801
+TARGET_VENDOR_PRODUCT_NAME := RMX1911
+TARGET_VENDOR_DEVICE_NAME := RMX1911
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="RMX1801" \
-    PRODUCT_NAME="RMX1801" \
+    TARGET_DEVICE="RMX1911" \
+    PRODUCT_NAME="RMX1911" \
     PRIVATE_BUILD_DESC="sdm660_64-user 9 PKQ1.181121.001 eng.root.20191107.030734 release-keys"
 
 BUILD_FINGERPRINT := google/coral/coral:10/QQ2A.200305.003/6156912:user/release-keys

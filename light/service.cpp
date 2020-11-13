@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.oppo_RMX1801"
+#define LOG_TAG "android.hardware.light@2.0-service.realme_RMX1911"
 
 #include <hidl/HidlTransportSupport.h>
 
