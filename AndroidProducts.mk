@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_RMX1911.mk \
+    $(LOCAL_DIR)/derp_RMX1911.mk \
     $(LOCAL_DIR)/aosp_RMX1911.mk

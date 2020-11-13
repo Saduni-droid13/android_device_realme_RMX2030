@@ -18,8 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOSiP stuff.
+$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
 # Inherit from realme RMX1911
 $(call inherit-product, device/realme/RMX1911/device.mk)
@@ -34,8 +34,16 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Bootanimation
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1600
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_RMX1911
+# Setup Gapps options
+IS_PHONE := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_MINIMAL_APPS := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+
+PRODUCT_NAME := derp_RMX1911
 PRODUCT_DEVICE := RMX1911
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := realme
