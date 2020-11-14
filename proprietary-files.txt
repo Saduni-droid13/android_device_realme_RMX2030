@@ -1,3 +1,11 @@
+## RMX1911 package version: RMX1911EX_11_OTA_0290, unless stated otherwise
+
+# ANT
+lib/com.qualcomm.qti.ant@1.0.so
+lib/libantradio.so
+lib64/com.qualcomm.qti.ant@1.0.so
+lib64/libantradio.so
+
 # Alarm
 framework/vendor.qti.hardware.alarm-V1.0-java.jar
 
@@ -5,99 +13,176 @@ framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so|2dffcd0bde20f5f1830918146c9f40c02bbbae9f
 vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so|117f8b7d834b4587dc8c8c5d15fada85b877ed26
 
-# Camera firmware
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_12_0.fw
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_5_1.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
-
-# Camera postprocessing
-etc/vstab_configs/vstab_db_720p_video_0_s5k2p7sq.config
-etc/vstab_configs/vstab_db_720p_video_1.config
-etc/vstab_configs/vstab_db_720p_video_0_sfov_main.config
-etc/vstab_configs/vstab_db_1080p_video_0_s5k2p7sq_sfov_bmi.config
-etc/vstab_configs/vstab_db_1080p_video_0_sfov_lsm.config
-etc/vstab_configs/vstab_db_720p_preview.config
-etc/vstab_configs/vstab_db_1080p_video_0_s5k2p7sq_sfov_main.config
-etc/vstab_configs/vstab_db_1080p_preview_0_imx519_bmi.config
-etc/vstab_configs/vstab_db_1350p_video_0_s5k2p7sq.config
-etc/vstab_configs/vstab_db_720p_video_0_sfov.config
-etc/vstab_configs/vstab_db_1080p_video_0_s5k2p7sq.config
-etc/vstab_configs/vstab_db_720p_video_0.config
-etc/vstab_configs/vstab_db_900p_video_0_s5k2p7sq.config
-etc/vstab_configs/vstab_db_900p_video_0.config
-etc/vstab_configs/vstab_db_1080p_video_1.config
-etc/vstab_configs/vstab_db_1080p_video_0.config
-etc/vstab_configs/vstab_db_1080p_video_0_imx519_bmi.config
-etc/vstab_configs/vstab_db_1080p_preview_0_imx519_lsm.config
-etc/vstab_configs/fsync_db.config
-etc/vstab_configs/vstab_db_720p_video_0_s5k2p7sq_sfov_main.config
-etc/vstab_configs/vstab_db_720p_video_0_imx519_lsm.config
-etc/vstab_configs/vstab_db_1080p_video_0_sfov_main.config
-etc/vstab_configs/vstab_db_720p_preview_0_imx519_bmi.config
-etc/vstab_configs/vstab_db_4k_preview.config
-etc/vstab_configs/vstab_db_720p_preview_0_imx519_lsm.config
-etc/vstab_configs/vstab_db_1080p_video_0_imx519_lsm.config
-etc/vstab_configs/vstab_db_720p_video_0_imx519_bmi.config
-etc/vstab_configs/vstab_db_720p_video_0_s5k2p7sq_sfov_bmi.config
-etc/vstab_configs/vstab_db_4k_video_0.config
-etc/vstab_configs/vstab_db_1080p_preview.config
-etc/vstab_configs/GyroOffset_db.config
-etc/vstab_configs/vstab_db_720p_video_0_s5k2p7sq_sfov.config
-etc/vstab_configs/vstab_db_1350p_video_0.config
-etc/vstab_configs/vstab_db_4k_video_1.config
-etc/vstab_configs/vstab_db_720p_video_0_sfov_lsm.config
-etc/vstab_configs/vstab_db_1080p_video_0_s5k2p7sq_sfov.config
-etc/vstab_configs/vstab_db_1080p_video_0_sfov.config
-
 # Display postprocessing
+lib/vendor.display.color@1.0.so
+lib/vendor.display.color@1.1.so
+lib/vendor.display.color@1.2.so
+lib/vendor.display.color@1.3.so
+lib/vendor.display.postproc@1.0.so
 lib64/vendor.display.color@1.0.so
+lib64/vendor.display.color@1.1.so
+lib64/vendor.display.color@1.2.so
+lib64/vendor.display.color@1.3.so
+lib64/vendor.display.postproc@1.0.so
+
+# ESE-Powermanager
+lib/vendor.qti.esepowermanager@1.0.so
+lib64/vendor.qti.esepowermanager@1.0.so
+
+# Factory
+-framework/vendor.qti.hardware.factory-V1.0-java.jar
+lib/vendor.qti.hardware.factory@1.0.so
+lib64/vendor.qti.hardware.factory@1.0.so
+
+# FM
+lib/fm_helium.so
+lib/libfm-hci.so
+lib/vendor.qti.hardware.fm@1.0.so
+lib64/fm_helium.so
+lib64/libfm-hci.so
+lib64/vendor.qti.hardware.fm@1.0.so
+
+# GPS
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.xml
+etc/permissions/izat.xt.srv.xml
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
+-framework/com.qti.location.sdk.jar
+-framework/izat.xt.srv.jar
+lib/vendor.qti.gnss@1.0.so
+lib/vendor.qti.gnss@1.1.so
+lib/vendor.qti.gnss@1.2.so
+lib/vendor.qti.gnss@2.0.so
+lib/vendor.qti.gnss@2.1.so
+lib64/liblocationservice_jni.so
+lib64/libxt_native.so
+lib64/vendor.qti.gnss@1.0.so
+lib64/vendor.qti.gnss@1.1.so
+lib64/vendor.qti.gnss@1.2.so
+lib64/vendor.qti.gnss@2.0.so
+lib64/vendor.qti.gnss@2.1.so
+
+# HotwordEnrollment
+-priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk
+
+# Latency
+-framework/vendor.qti.hardware.data.latency-V1.0-java.jar
+-framework/vendor.qti.latency-V2.0-java.jar
+lib/vendor.qti.hardware.data.latency@1.0.so
+lib/vendor.qti.latency@2.0.so
+lib64/vendor.qti.hardware.data.latency@1.0.so
+lib64/vendor.qti.latency@2.0.so
 
 # Media
-lib64/libmmosal.so
 lib/extractors/libmmparser.so
 lib/libFileMux.so
 lib/libmmosal.so
 lib/libmmparser_lite.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
 lib/libOmxMux.so
+lib/vendor.qti.hardware.vpp@1.1.so
+lib/vendor.qti.hardware.vpp@1.2.so
+lib64/extractors/libmmparser.so
+lib64/libFileMux.so
+lib64/libmmosal.so
+lib64/libmmparser_lite.so
+lib64/libmmrtpdecoder.so
+lib64/libmmrtpencoder.so
+lib64/libOmxMux.so
+lib64/vendor.qti.hardware.vpp@1.1.so
+lib64/vendor.qti.hardware.vpp@1.2.so
+
+# Perf
+etc/perf/wlc_model.tflite
+lib/libqti-perfd-client_system.so
+lib/libqti-util_system.so
+lib/libqti_performance.so
+lib/vendor.qti.hardware.perf@1.0.so
+lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
+lib64/libqti_performance.so
+lib64/vendor.qti.hardware.perf@1.0.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 
-# Radio
--app/embms/embms.apk|f45f19f139890bfc61a18b30acafe3566f47cf19
--app/QtiTelephonyService/QtiTelephonyService.apk|febae0155520ca23ae22e0d2cd392a9b9afd1f18
+# Radio - from ginkgo-user-9-PKQ1.190616.001-V11.0.7.0.PCOIDXM-release-keys
+-app/datastatusnotification/datastatusnotification.apk|656aef685253b1d7145dde43309a4af72f36f127
+-app/embms/embms.apk|a65077fd4b966a5fc4e8e3741625b3ea815853d8
+-app/QtiTelephonyService/QtiTelephonyService.apk|a7f2d0430bff20226fef4297a73890263da6574a
 etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
+etc/permissions/privapp-permissions-qti.xml|3ceaf0eaa807e3c17c379167ea9ecee270cfe6e2
 etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
 etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
-framework/embmslibrary.jar|180d4d6b65d989023364457eb1bf6e1d45f7e274
-framework/qcrilhook.jar|568f66507f150ab74942f10686372a787f97839e
-framework/qti-telephony-common.jar|1bbfbe02a3d1245f6d112a1d97bf68917dd89c09
-framework/QtiTelephonyServicelibrary.jar|29e0cfb5d4e4834a6f36a87d404d8200d67bd4c0
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|d1d3adfe6eff32a3013e146317324029181e3c4a
+etc/sysconfig/qti_whitelist.xml|4474589b5f733a6d79716b76974751f19ec15ddc
+-framework/embmslibrary.jar|980832af89ed59120b7362ddb56d3120bb6b2239
+-framework/qcrilhook.jar|7368e0356e2f265d16149f49525684b8b200dafa
+-framework/qti-telephony-common.jar|0fe2521bd69dca3475c364574fa3b3f65f53ee23
+-framework/QtiTelephonyServicelibrary.jar|bcfb1820d5102087d69f4e1d5e9f371592d36ac7
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|4b97f3535677468e0af70ccaedd5056ee4cf29c2
 
-# Radio - IMS
--priv-app/ims/ims.apk|60d5244537db8a74ed0205ea6e9a5d5e20e40f3e
-lib64/libdiag_system.so|81a47cb3a8c4a040cc0144ae15684b4dfe4e0dd6
-lib64/lib-imsvideocodec.so|dd8bf8af793acdf020c9ace9eb2585755dd33b00
-lib64/lib-imsvt.so|8dafceb20cb519944b669278e61b532eed0d9060
-lib64/lib-imsvtextutils.so|4f5e33e1fce70dafdc9ed0de95440ccd262342d7
-lib64/lib-imsvtutils.so|3c1913878aac6c5d5a9b279acecf5997d3737d5e
-lib64/libimscamera_jni.so|133fec4e7be337eb255eb226c4ff96ae53b94be7
-lib64/libimsmedia_jni.so|17a2cb31fb5960769b4c2c0636fffe721c4f2a74
-lib64/librcc.so|96c467ec6b7ea03b77cda3b88fb36a56c196aaa8
-lib64/vendor.qti.imsrtpservice@1.0.so|559a2dbf409d86746ed4303f2e0089256bb91a07
+# Radio - IMS - from ginkgo-user-9-PKQ1.190616.001-V11.0.7.0.PCOIDXM-release-keys
+-app/imssettings/imssettings.apk|efe082243f16e2c29bd64f674323e59a71b95d6c
+-app/uceShimService/uceShimService.apk|b66d406a862537a882abdb988b54204690a4e24d
+etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml|8d25bd7b79baf266950eb484c1a28817f891aec2
+etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml|998076243537f61f3683a3c083f7b27510617368
+etc/permissions/com.qualcomm.qti.imscmservice.xml|db25ef24f1937366d58a53b4f4b8923bc9e98d2d
+-framework/com.qualcomm.qti.imscmservice-V2.0-java.jar|fc05d1163d0fdf57bac062bf8d5a86c4cd1dd91d
+-framework/com.qualcomm.qti.imscmservice-V2.1-java.jar|33245b6e1a47226fde473c3c242893188e94132d
+-framework/com.qualcomm.qti.uceservice-V2.0-java.jar|47bf63f39bef0868c5b9935edaf58f44794baa90
+-framework/vendor.qti.ims.callinfo-V1.0-java.jar|38eff3c485873a4b9ed5d5ac7120794103e771d5
+-framework/vendor.qti.ims.rcsconfig-V1.0-java.jar|ed82adbd49540f389cb8b4fc900271cc4e9806ea
+lib/com.qualcomm.qti.imscmservice@1.0.so|d6a06a45f663a94326752daa6b088c25ae74a7a2
+lib/com.qualcomm.qti.imscmservice@2.0.so|a334450e164869a9deb07b05626c6aec8033f457
+lib/com.qualcomm.qti.imscmservice@2.1.so|dbe46c76c8521d10010d6597d3a0f782d04277e7
+lib/com.qualcomm.qti.uceservice@2.0.so|d22afcf212e2f6d42c26cdeb7411b319045a4320
+lib/lib-imsvideocodec.so|557585f080e1c554e6e52527d77e741efa2ef719
+lib/lib-imsvt.so|ce48598fb4e2fb62f64314f161408e3bffb0e9ee
+lib/lib-imsvtextutils.so|48a191094a6701dc637283c57f48fd1ddd1d489d
+lib/lib-imsvtutils.so|ac53baa7f3e302ed07f53bc7272e7602558f46d8
+lib/libdiag_system.so|13388fd0026d5bcb9361837a805b4814c702b9b5
+lib/libimscamera_jni.so|f2756f1b95d5f62b9851691501d63bcb6adcc021
+lib/libimsmedia_jni.so|3614d2ca982cadfe6cc6e90ee601713e45ab8d5c
+lib/librcc.so|7dfe1ba9e4cf88fb2b6d5be398d81f4bffe350c8
+lib/vendor.qti.ims.callinfo@1.0.so|9ac7432bd04068bb31f2b9ffc680b94715a78c96
+lib/vendor.qti.ims.rcsconfig@1.0.so|88777970f2a5806443522a1c4801969b54734856
+lib/vendor.qti.imsrtpservice@1.0.so|d421b23373455f15df243d47d01f1d8a71bcaeed
+lib64/com.qualcomm.qti.imscmservice@1.0.so|642b6843fd2179a617a24eb1c539af48713b8f3d
+lib64/com.qualcomm.qti.imscmservice@2.0.so|3e727b5b1d85fa81b3716c51dba555e723767081
+lib64/com.qualcomm.qti.imscmservice@2.1.so|38b3812ca804ebc2b120b7732304d96d8f851e13
+lib64/com.qualcomm.qti.uceservice@2.0.so|bc960d8cded71bc5236f0ffe3d97a5e65c445878
+lib64/lib-imsvideocodec.so|bfde81931da590fc9c8ebf12c619d82f4e356483
+lib64/lib-imsvt.so|64542f4dbc11deef8a76d379598cfa166e2ab5e4
+lib64/lib-imsvtextutils.so|4b0bfbbbbb3946a1d15b00fc8aedd7fef7e37fec
+lib64/lib-imsvtutils.so|e696ba4497f8f5457cd1b29558e3f1b20aa1d6c6
+lib64/libdiag_system.so|143f84167816b03772a2f9bb9c5ae685bc111684
+lib64/libimscamera_jni.so|1f32d9b2ed5a0561582d08084b46bbb399e4eac4
+lib64/libimsmedia_jni.so|4aab06d2d519583da618ec37c6d6a847947c7602
+lib64/librcc.so|2816e62cb0c3d71f6fab324964eafed6d25fad44
+lib64/vendor.qti.ims.callinfo@1.0.so|f1163794f687e06fc7bdc289efda5a628751fc7d
+lib64/vendor.qti.ims.rcsconfig@1.0.so|f110eff3b0934cc3a50e2078ac8c6eefa902034e
+lib64/vendor.qti.imsrtpservice@1.0.so|a448decfc6b4f446e3206baec8d8f074136ce9b4
+-priv-app/ims/ims.apk|a35d86c5b4431c60fbca311ae4faba07574b5fb1
+
+# SCVE
+lib/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+lib/vendor.qti.hardware.scve.objecttracker@1.0.so
+lib/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+lib/vendor.qti.hardware.scve.panorama@1.0.so
+lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # SDM
 lib64/libsdm-disp-apis.so
+
+# Soter
+-app/SoterService/SoterService.apk
+-framework/vendor.qti.hardware.soter-V1.0-java.jar
+lib64/vendor.qti.hardware.soter@1.0.so
 
 # WiFi Display
 bin/wfdservice
@@ -106,14 +191,14 @@ etc/wfdconfig.xml
 etc/wfdconfigsink.xml
 -framework/WfdCommon.jar
 lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
+lib/libwfdaac.so
 lib/libwfdavenhancements.so
 lib/libwfdclient.so
 lib/libwfdcodecv4l2.so
 lib/libwfdcommonutils.so
 lib/libwfdconfigutils.so
 lib/libwfdmminterface.so
+lib/libwfdmmservice.so
 lib/libwfdmmsink.so
 lib/libwfdmmsrc.so
 lib/libwfdnative.so
