@@ -41,6 +41,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Charger
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/off_chg.sh:install/bin/off_chg.sh \
+    $(LOCAL_PATH)/rootdir/bin/charger:install/bin/charger
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
