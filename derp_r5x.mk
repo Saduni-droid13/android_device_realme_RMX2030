@@ -21,8 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common AOSiP stuff.
 $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
-# Inherit from realme RMX1911
-$(call inherit-product, device/realme/RMX1911/device.mk)
+# Inherit from realme r5x
+$(call inherit-product, device/realme/r5x/device.mk)
 
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
@@ -43,20 +43,20 @@ TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_MINIMAL_APPS := false
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
 
-PRODUCT_NAME := derp_RMX1911
-PRODUCT_DEVICE := RMX1911
+PRODUCT_NAME := derp_r5x
+PRODUCT_DEVICE := r5x
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme 5
+PRODUCT_MODEL := Realme 5 Series
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
 
-TARGET_VENDOR_PRODUCT_NAME := RMX1911
-TARGET_VENDOR_DEVICE_NAME := RMX1911
+TARGET_VENDOR_PRODUCT_NAME := r5x
+TARGET_VENDOR_DEVICE_NAME := rx5
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="RMX1911" \
-    PRODUCT_NAME="RMX1911" \
+    TARGET_DEVICE="r5x" \
+    PRODUCT_NAME="r5x" \
     PRIVATE_BUILD_DESC="coral-user 11 RP1A.201105.002-6869500-release-keys"
 
 BUILD_FINGERPRINT := google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys

@@ -16,7 +16,10 @@
 
 BOARD_VENDOR := realme
 
-DEVICE_PATH := device/realme/RMX1911
+DEVICE_PATH := device/realme/r5x
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := RMX1911,RMX1925,RMX2030
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
