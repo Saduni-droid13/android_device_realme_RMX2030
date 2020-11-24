@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_r5x.mk
+    $(LOCAL_DIR)/lineage_r5x.mk
