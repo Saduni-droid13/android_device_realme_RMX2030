@@ -63,7 +63,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Radio
 PRODUCT_PRODUCT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
-    ro.telephony.default_network=22,18 \
+    ro.telephony.default_network=22,22 \
     persist.vendor.radio.lte_vrte_ltd=1 \
     persist.vendor.radio.cs_srv_type=1 \
     persist.vendor.radio.rat_on=combine \
