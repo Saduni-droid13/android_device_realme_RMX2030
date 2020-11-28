@@ -97,6 +97,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.realme_trinket
 
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    com.gsma.services.nfc \
+    NfcNci \
+    SecureElement \
+    Tag
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
@@ -121,7 +129,9 @@ PRODUCT_BOOT_JARS += \
     UxPerformance
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    vendor/nxp/opensource/pn5xx
 
 # System properties
 -include $(LOCAL_PATH)/product_prop.mk
