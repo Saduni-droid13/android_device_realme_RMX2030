@@ -26,6 +26,8 @@
     <string name="game_mode_summary">Boost Touch Sampling Rate and enables performance boosting.\nBattery life will be affected</string>
     <string name="game_mode_title">Game Mode</string>
     <string name="tile_game_mode">Game Mode</string>
+    <string name="game_mode_warning">Using game mode will impact battery life significantly</string>
+    <string name="game_mode_notif_content">Game Mode is activated</string>
 
     <!-- DND Switch -->
     <string name="dnd_title">Do Not Disturb</string>
