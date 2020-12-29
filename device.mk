@@ -86,6 +86,9 @@ PRODUCT_PACKAGES += \
     init.camera.expose.rc \
     init.devicesetting.rc \
     init.oppo.fingerprints.rc \
+    init.realmehub.rc \
+    init.realmehub.sh \
+    init.qcom.rc \
     init.target.rc \
     init.safailnet.rc \
     hal3.rc
@@ -175,3 +178,8 @@ PRODUCT_BOOT_JARS += \
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# RealmeHub
+PRODUCT_PACKAGES += \
+     RealmeHub \
+     RealmeDoze
