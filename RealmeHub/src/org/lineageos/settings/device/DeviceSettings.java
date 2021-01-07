@@ -44,6 +44,10 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 
+import android.os.FileUtils;
+
+import org.lineageos.settings.device.SeekBarPreference;
+
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -51,11 +55,16 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_OTG_SWITCH = "otg";
     public static final String KEY_GAME_SWITCH = "game";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
+    public static final String KEY_CHARGING_SWITCH = "smart_charging";
+    public static final String KEY_RESET_STATS = "reset_stats";
 
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private static TwoStatePreference mOTGModeSwitch;
     private static TwoStatePreference mGameModeSwitch;
+    private static TwoStatePreference mSmartChargingSwitch;
+    public static TwoStatePreference mResetStats;
+    public static SeekBarPreference mSeekBarPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -76,6 +85,18 @@ public class DeviceSettings extends PreferenceFragment
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
+
+        mSmartChargingSwitch = (TwoStatePreference) findPreference(KEY_CHARGING_SWITCH);
+        mSmartChargingSwitch.setChecked(prefs.getBoolean(KEY_CHARGING_SWITCH, false));
+        mSmartChargingSwitch.setOnPreferenceChangeListener(new SmartChargingSwitch(getContext()));
+
+        mResetStats = (TwoStatePreference) findPreference(KEY_RESET_STATS);
+        mResetStats.setChecked(prefs.getBoolean(KEY_RESET_STATS, false));
+        mResetStats.setEnabled(mSmartChargingSwitch.isChecked());
+        mResetStats.setOnPreferenceChangeListener(this);
+
+        mSeekBarPreference = (SeekBarPreference) findPreference("seek_bar");
+        mSeekBarPreference.setEnabled(mSmartChargingSwitch.isChecked());
     }
 
     @Override
