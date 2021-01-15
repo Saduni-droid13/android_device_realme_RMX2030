@@ -133,6 +133,10 @@ PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
