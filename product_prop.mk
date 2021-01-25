@@ -35,7 +35,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # HAL1 apps list
 PRODUCT_PRODUCT_PROPERTIES += \
-    vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner,com.instagram.android,net.one97.paytm
+    vendor.camera.hal1.packagelist=com.intsig.camscanner,com.instagram.android,net.one97.paytm
 
 # IMS Debug
 PRODUCT_PROPERTY_OVERRIDES += \
