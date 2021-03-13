@@ -148,10 +148,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.realme_trinket
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 28
 PRODUCT_EXTRA_VNDK_VERSIONS := 28
