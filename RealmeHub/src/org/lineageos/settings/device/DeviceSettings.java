@@ -59,6 +59,8 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_CHARGING_SWITCH = "smart_charging";
     public static final String KEY_RESET_STATS = "reset_stats";
     public static final String KEY_DND_SWITCH = "dnd";
+    public static final String KEY_CABC = "cabc";
+    public static final String CABC_SYSTEM_PROPERTY = "persist.cabc_profile";
 
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
@@ -69,6 +71,7 @@ public class DeviceSettings extends PreferenceFragment
     public static TwoStatePreference mResetStats;
     public static TwoStatePreference mDNDSwitch;
     public static SeekBarPreference mSeekBarPreference;
+    private SecureSettingListPreference mCABC;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -105,6 +108,11 @@ public class DeviceSettings extends PreferenceFragment
 
         mSeekBarPreference = (SeekBarPreference) findPreference("seek_bar");
         mSeekBarPreference.setEnabled(mSmartChargingSwitch.isChecked());
+
+        mCABC = (SecureSettingListPreference) findPreference(KEY_CABC);
+        mCABC.setValue(Utils.getStringProp(CABC_SYSTEM_PROPERTY, "0"));
+        mCABC.setSummary(mCABC.getEntry());
+        mCABC.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -123,6 +131,12 @@ public class DeviceSettings extends PreferenceFragment
 
             default:
                 break;
+        }
+
+        if (preference == mCABC) {
+            mCABC.setValue((String) value);
+            mCABC.setSummary(mCABC.getEntry());
+            Utils.setStringProp(CABC_SYSTEM_PROPERTY, (String) value);
         }
         return true;
     }

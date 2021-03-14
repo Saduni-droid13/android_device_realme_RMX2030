@@ -16,6 +16,15 @@
     <string name="graphics_title">Gaming</string>
     <string name="misc_title">Misc settings</string>
     <string name="smart_charging_main_title">Battery</string>
+    <string name="display_title">Display</string>
+
+    <!-- CABC Mode -->
+    <string name="cabc_title">CABC Mode</string>
+    <string name="cabc_dialogTitle">CABC Profiles</string>
+    <string name="cabc_off">Off</string>
+    <string name="cabc_normal">On</string>
+    <string name="cabc_balanced">Balanced Mode</string>
+    <string name="cabc_aggressive">Super power saving mode</string>
 
     <!-- OTG mode -->
     <string name="otg_mode_summary">Enable USB-OTG power supply for external headphones and flash drives</string>

@@ -5,6 +5,10 @@ on boot
   chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
   chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
 
+# CABC
+  chown system system /sys/kernel/oppo_display/cabc
+  chmod 0644 /sys/kernel/oppo_display/cabc
+
 # Game Mode perf profile
 on property:perf_profile=0
   write /sys/module/cpu_boost/parameters/input_boost_duration 64
@@ -16,3 +20,18 @@ on property:perf_profile=1
   write /sys/module/cpu_boost/parameters/input_boost_freq_lp 1305600
   write /sys/module/cpu_boost/parameters/input_boost_freq_hp 1401600
 
+# CABC off
+on property:persist.cabc_profile=0
+  write /sys/kernel/oppo_display/cabc 0
+
+# CABC on
+on property:persist.cabc_profile=1
+  write /sys/kernel/oppo_display/cabc 1
+
+# CABC balanced
+on property:persist.cabc_profile=2
+  write /sys/kernel/oppo_display/cabc 2
+
+# CABC aggressive
+on property:persist.cabc_profile=3
+  write /sys/kernel/oppo_display/cabc 3

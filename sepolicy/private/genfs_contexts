@@ -1,0 +1,1 @@
+genfscon sysfs /sys/kernel/oppo_display/cabc          u:object_r:sysfs_graphics_ffl:s0

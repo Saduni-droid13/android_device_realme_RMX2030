@@ -1,1 +1,2 @@
 allow init sysfs:file { write open };
+allow init sysfs_graphics_ffl:file { write open };
