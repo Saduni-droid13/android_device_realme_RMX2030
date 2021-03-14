@@ -65,7 +65,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.realme_trinket
+    android.hardware.biometrics.fingerprint@2.1-service.r5x
 
 # FU
 $(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.realme_trinket
+    android.hardware.light@2.0-service.r5x
 
 # NFC
 PRODUCT_PACKAGES += \
