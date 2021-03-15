@@ -33,18 +33,6 @@ std::vector<std::string> ro_props_default_source_order = {
     "vendor.",
 };
 
-// bool hasNFC()
-// {
-//     // Check NFC
-//     std::ifstream infile("/proc/touchpanel/NFC_CHECK");
-//     std::string check;
-//     bool ret = false;
-//     getline(infile, check);
-//     if (!check.compare("SUPPORTED"))
-//         ret = true;
-//     return ret;
-// }
-
 void property_override(char const prop[], char const value[], bool add = true)
 {
     prop_info *pi;
@@ -57,10 +45,10 @@ void property_override(char const prop[], char const value[], bool add = true)
 
 void setRMX(unsigned int variant)
 {
-    r5x_props prop[3] = {};
+    r5x_props prop[4] = {};
 
-    std::string build_desc = "coral-user 11 RP1A.201105.002-6869500-release-keys";
-    std::string build_fp = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
+    std::string build_desc = "redfin-user 11 RQ2A.210305.006 7119741 release-keys";
+    std::string build_fp = "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys";
 
     //RMX1911
     prop[0] = {
@@ -70,8 +58,16 @@ void setRMX(unsigned int variant)
         "RMX1911EX",
     };
 
-    //RMX1927
+    // RMX1925
     prop[1] = {
+        build_fp,
+        build_desc,
+        "RMX1925",
+        "RMX1925EX",
+    };
+
+    //RMX1927
+    prop[2] = {
         build_fp,
         build_desc,
         "RMX1927",
@@ -79,7 +75,7 @@ void setRMX(unsigned int variant)
     };
 
     //RMX1993
-    prop[2] = {
+    prop[3] = {
         build_fp,
         build_desc,
         "RMX2030",
@@ -114,16 +110,28 @@ void vendor_load_properties()
     std::string prjVersion;
     getline(infile, prjVersion);
 
+    std::ifstream fin;
+    std::string buf;
+    fin.open("/proc/cmdline");
+    while (std::getline(fin, buf, ' '))
+      if (buf.find("board_id") != std::string::npos)
+          break;
+    fin.close();
+
     if (prjVersion == "19743")
     {
-        setRMX(2); //RMX2030
+        setRMX(3); //RMX2030
     }
     else if (prjVersion == "19632")
     {
-        setRMX(1); //RMX1927
+        setRMX(2); //RMX1927
     }
     else
     {
-        setRMX(0); //RMX1911
+        if (buf.find("S86125AA1") != std::string::npos) {
+            setRMX(1); // RMX1925
+        } else {
+            setRMX(0); //RMX1911
+        }
     }
 }
