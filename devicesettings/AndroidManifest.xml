@@ -93,8 +93,5 @@
             android:name="org.lineageos.settings.device.fpsinfo.FPSInfoService"
             android:exported="false">
         </service>
-        <service android:name="org.lineageos.settings.device.SmartChargingService"
-                android:exported="false">
-        </service>
     </application>
 </manifest>
