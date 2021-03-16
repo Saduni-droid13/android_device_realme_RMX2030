@@ -18,8 +18,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Ancient stuff.
-$(call inherit-product, vendor/ancient/config/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from realme r5x
 $(call inherit-product, device/realme/r5x/device.mk)
@@ -31,16 +31,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Ancient Properties
-TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_USES_BLUR := true
-
 # Bootanimation
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := ancient_r5x
+PRODUCT_NAME := lineage_r5x
 PRODUCT_DEVICE := r5x
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := realme
