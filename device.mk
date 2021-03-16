@@ -59,9 +59,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0
 
 # Doze
-# PRODUCT_PACKAGES += \
-#     doze \
-#     devicesettings
+PRODUCT_PACKAGES += \
+    doze \
+    devicesettings
 
 # Fingerprint
 PRODUCT_PACKAGES += \
