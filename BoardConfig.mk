@@ -119,15 +119,10 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
 # SELinux
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy_vndr/generic/private \
-    device/qcom/sepolicy_vndr/qva/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy_vndr/generic/public \
-    device/qcom/sepolicy_vndr/qva/public
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
+TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
+BOARD_SEPOLICY_VERS := 28.0
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
