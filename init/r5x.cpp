@@ -103,6 +103,9 @@ void setRMX(unsigned int variant)
         set_ro_product_prop(source, "device", prop[variant].product_device.c_str());
         set_ro_product_prop(source, "model", prop[variant].device_build.c_str());
     }
+
+    property_override("persist.vendor.audio.fluence.voicerec", "true", false);
+    property_override("vendor.audio.safx.pbe.enabled", "false", false);
 }
 
 void vendor_load_properties()
