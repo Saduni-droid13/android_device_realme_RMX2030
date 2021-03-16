@@ -88,6 +88,7 @@ PRODUCT_BOOT_JARS += \
 
 # Init
 PRODUCT_PACKAGES += \
+    init.camera.expose.rc \
     init.devicesetting.rc \
     init.oppo.fingerprints.rc \
     init.target.rc \
