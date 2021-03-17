@@ -99,10 +99,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl.r5x
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-sdm
-
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
