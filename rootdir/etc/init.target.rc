@@ -59,6 +59,11 @@ on boot
     chown system system /proc/touchpanel/tp_fw_update
     write /proc/touchpanel/tp_fw_update 1
 
+    # Dt2w
+    chmod 0660 /proc/touchpanel/double_tap_enable
+    chown system system /proc/touchpanel/double_tap_enable
+    write /proc/touchpanel/double_tap_enable 1
+
 on init
     write /sys/module/sdcardfs/parameters/skipd_enable 0
     write /sys/module/sdcardfs/parameters/extra_enable 0
