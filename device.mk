@@ -74,6 +74,11 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
+# Hotword Permission
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hiddenapi-package-whitelist-hotword.xml:system/etc/permissions/hiddenapi-package-whitelist-hotword.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
+
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common_system
