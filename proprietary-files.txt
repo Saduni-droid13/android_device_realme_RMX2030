@@ -132,7 +132,6 @@ etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
 etc/sysconfig/qti_whitelist.xml|4474589b5f733a6d79716b76974751f19ec15ddc
 -framework/embmslibrary.jar|980832af89ed59120b7362ddb56d3120bb6b2239
 -framework/qcrilhook.jar|7368e0356e2f265d16149f49525684b8b200dafa
--framework/qti-telephony-common.jar|0fe2521bd69dca3475c364574fa3b3f65f53ee23
 -framework/QtiTelephonyServicelibrary.jar|bcfb1820d5102087d69f4e1d5e9f371592d36ac7
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|4b97f3535677468e0af70ccaedd5056ee4cf29c2
 
