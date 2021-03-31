@@ -13,6 +13,9 @@ framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/lib64/soundfx/libvolumelistener.so:lib64/soundfx/libvolumelistener.so|2dffcd0bde20f5f1830918146c9f40c02bbbae9f
 vendor/lib/soundfx/libvolumelistener.so:lib/soundfx/libvolumelistener.so|117f8b7d834b4587dc8c8c5d15fada85b877ed26
 
+# Charger - from qti/qssi/qssi:11/RKQ1.200928.002/root03062021:user/release-keys
+bin/charger|def0e792418f1f1f9ec167f95379caf920596d2d
+
 # Display postprocessing
 lib/vendor.display.color@1.0.so
 lib/vendor.display.color@1.1.so
