@@ -5,9 +5,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <cstdlib>
 #include <vector>
 #include <string>
 #include <fstream>
+#include <sys/sysinfo.h>
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
@@ -16,6 +18,10 @@
 #include <android-base/logging.h>
 
 #include "vendor_init.h"
+
+char const *heapminfree;
+char const *heapmaxfree;
+char const *heaptargetutilization;
 
 struct r5x_props
 {
@@ -33,6 +39,25 @@ std::vector<std::string> ro_props_default_source_order = {
     "vendor.",
     "system_ext.",
 };
+
+void init_dalvik()
+{
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+
+    if (sys.totalram >= 3ull * 1024 * 1024 * 1024){
+        // from - phone-xhdpi-4096-dalvik-heap.mk
+        heaptargetutilization = "0.6";
+        heapminfree = "8m";
+        heapmaxfree = "16m";
+    } else if (sys.totalram >= 2ull * 1024 * 1024 * 1024) {
+        // from - phone-xhdpi-2048-dalvik-heap.mk.mk
+        heaptargetutilization = "0.75";
+        heapminfree = "512k";
+        heapmaxfree = "8m";
+    }
+}
 
 void property_override(char const prop[], char const value[], bool add = true)
 {
@@ -138,4 +163,12 @@ void vendor_load_properties()
             setRMX(0); //RMX1911
         }
     }
+
+    init_dalvik();
+    property_override("dalvik.vm.heapstartsize", "8m", true);
+    property_override("dalvik.vm.heapgrowthlimit", "192m", true);
+    property_override("dalvik.vm.heapsize", "512m", true);
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization, true);
+    property_override("dalvik.vm.heapminfree", heapminfree, true);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree, true);
 }
