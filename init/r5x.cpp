@@ -73,39 +73,38 @@ void setRMX(unsigned int variant)
 {
     r5x_props prop[4] = {};
 
-    std::string build_desc = "redfin-user 11 RQ2A.210305.006 7119741 release-keys";
-    std::string build_fp = "google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys";
+    std::string build_desc = "unknown-user 10 QKQ1.200209.002 unknown release-keys";
 
     //RMX1911
     prop[0] = {
-        build_fp,
+        "realme/RMX1911/RMX1911:10/QKQ1.200209.002/1608537052:user/release-keys",
         build_desc,
         "RMX1911",
-        "RMX1911EX",
+        "RMX1911",
     };
 
     // RMX1925
     prop[1] = {
-        build_fp,
+        "realme/RMX1925/RMX1925:10/QKQ1.200209.002/1608537052:user/release-keys",
         build_desc,
         "RMX1925",
-        "RMX1925EX",
+        "RMX1925",
     };
 
     //RMX1927
     prop[2] = {
-        build_fp,
+        "realme/RMX1927/RMX1927:10/QKQ1.200209.002/1608537052:user/release-keys",
         build_desc,
         "RMX1927",
-        "RMX1927EX",
+        "RMX1927",
     };
 
-    //RMX1993
+    //RMX2030
     prop[3] = {
-        build_fp,
+        "realme/RMX2030/RMX2030:10/QKQ1.200209.002/1608537052:user/release-keys",
         build_desc,
         "RMX2030",
-        "RMX2030EX",
+        "RMX2030",
     };
 
     const auto set_ro_build_prop = [](const std::string &source,
