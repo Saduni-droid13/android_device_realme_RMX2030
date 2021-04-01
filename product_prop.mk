@@ -133,3 +133,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # UI
 PRODUCT_PRODUCT_PROPERTIES += \
     sys.use_fifo_ui=1
+
+# Vulkan
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.hwui.renderer=skiavk
