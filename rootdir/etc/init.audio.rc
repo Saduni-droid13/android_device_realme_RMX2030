@@ -1,0 +1,14 @@
+service audio_script /system/bin/init.audio.sh
+    class main
+    user root
+    oneshot
+
+on property:ro.audio.19743=0
+    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio/audio_policy_configuration.xml bind
+    mount none /system/etc/audio_policy_configuration.xml /vendor/etc/audio_policy_configuration.xml bind
+    restart vendor.audio-hal-2-0
+
+on property:ro.audio.19743=1
+    mount none /system/etc/audio_policy_configuration_19743.xml /vendor/etc/audio/audio_policy_configuration.xml bind
+    mount none /system/etc/audio_policy_configuration_19743.xml /vendor/etc/audio_policy_configuration.xml bind
+    restart vendor.audio-hal-2-0
