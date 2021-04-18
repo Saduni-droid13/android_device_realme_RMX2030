@@ -137,3 +137,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Vulkan
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.hwui.renderer=skiavk
+
+# Zygote Preforking
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.device.config.runtime_native.uasp_pool_enabled=true
