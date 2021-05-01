@@ -15,9 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_r5x.mk
-
-COMMON_LUNCH_CHOICES := \
-    lineage_r5x-user \
-    lineage_r5x-userdebug \
-    lineage_r5x-eng
+    $(LOCAL_DIR)/lineage_RMX2030.mk

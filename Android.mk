@@ -20,6 +20,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter r5x,$(TARGET_DEVICE)),)
+ifneq ($(filter RMX2030,$(TARGET_DEVICE)),)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.light@2.0-impl.r5x
+LOCAL_MODULE := android.hardware.light@2.0-impl.RMX2030
 LOCAL_MODULE_PATH_32 := $(TARGET_OUT)/lib
 LOCAL_MODULE_PATH_64 := $(TARGET_OUT)/lib64
 LOCAL_MODULE_RELATIVE_PATH := hw

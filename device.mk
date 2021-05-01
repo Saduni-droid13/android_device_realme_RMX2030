@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/r5x
+DEVICE_PATH := device/realme/RMX2030
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/realme/r5x/r5x-vendor.mk)
+$(call inherit-product, vendor/realme/RMX2030/RMX2030-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -63,10 +63,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.r5x
-
-# FU
-$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
+    android.hardware.biometrics.fingerprint@2.1-service.RMX2030
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -100,7 +97,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl.r5x
+    android.hardware.light@2.0-impl.RMX2030
 
 # Media
 PRODUCT_COPY_FILES += \

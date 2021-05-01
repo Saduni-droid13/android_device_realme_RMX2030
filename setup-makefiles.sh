@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=r5x
+DEVICE=RMX2039
 VENDOR=realme
 
 INITIAL_COPYRIGHT_YEAR=2019
@@ -19,7 +19,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${ANDROID_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
