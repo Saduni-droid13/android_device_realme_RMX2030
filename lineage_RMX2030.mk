@@ -43,3 +43,5 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme 5i
 
 PRODUCT_GMS_CLIENTID_BASE := android-realme
+
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"
