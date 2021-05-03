@@ -27,13 +27,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    init.audio.rc \
-    init.audio.sh
+    audio.a2dp.default
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_19743.xml:system/etc/audio_policy_configuration_19743.xml
 
 # Bluetooth
 PRODUCT_PACKAGES += \
