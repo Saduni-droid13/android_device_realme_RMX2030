@@ -130,6 +130,8 @@ void setRMX(unsigned int variant)
 
     property_override("ro.build.fingerprint", prop[variant].build_fingerprint.c_str());
 
+    property_override("persist.vendor.audio.fluence.voicerec", "true", false);
+    property_override("vendor.audio.safx.pbe.enabled", "false", false);
 }
 
 void vendor_load_properties()
