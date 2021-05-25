@@ -32,6 +32,17 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+# Dex
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    pm.dexopt.boot=verify
+    pm.dexopt.first-boot=verify
+    pm.dexopt.install=speed-profile
+    dalvik.vm.image-dex2oat-filter=speed
+    dalvik.vm.image-dex2oat-threads=8
+    dalvik.vm.dex2oat-filter=speed
+    dalvik.vm.dex2oat-threads=8
+    dalvik.vm.dex2oat64.enabled=true
+
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.hw=1 \
