@@ -116,6 +116,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
    persist.dbg.vt_avail_ovr=1 \
    persist.dbg.wfc_avail_ovr=1
 
+# LMKD
+PRODUCT_PRODUCT_PROPERTIES += \
+   ro.lmk.low=1001 \
+   ro.lmk.medium=800 \
+   ro.lmk.critical=0 \
+   ro.lmk.critical_upgrade=false \
+   ro.lmk.upgrade_pressure=100 \
+   ro.lmk.downgrade_pressure=100 \
+   ro.lmk.log_stats=true
+
 # Media
 PRODUCT_PRODUCT_PROPERTIES += \
     media.settings.xml=/vendor/etc/media_profiles_V1_0.xml
