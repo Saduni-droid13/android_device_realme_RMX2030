@@ -15,7 +15,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Audio
 PRODUCT_PRODUCT_PROPERTIES += \
-   ro.config.vc_call_vol_steps=7 \
+   ro.config.vc_call_vol_steps=9 \
    ro.config.media_vol_steps=25 \
    ro.qc.sdk.audio.fluencetype=none \
    persist.audio.fluence.voicecall=true \
